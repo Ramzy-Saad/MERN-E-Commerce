@@ -1,0 +1,40 @@
+import type { Product } from './product';
+
+export const sampleProducts: Product[] = [
+  {
+    name: 'Free Shirt',
+    slug: 'free-shirt',
+    image: '../images/p1.jpeg',
+    category: 'Shirts',
+    brand: 'Nike',
+    price: 70,
+    countInStock: 20,
+    description: 'A popular shirt',
+    rating: 4.5,
+    numReviews: 10,
+  },
+  {
+    name: 'Free Short',
+    slug: 'free-short',
+    image: '../images/p2.jpg',
+    category: 'Shorts',
+    brand: 'Nike',
+    price: 100,
+    countInStock: 20,
+    description: 'A popular shirt',
+    rating: 4.5,
+    numReviews: 10,
+  },
+  {
+    name: 'Adidas Fit Shirt',
+    slug: 'adidas-fit-shirt',
+    image: '../images/p3.jpg',
+    category: 'Shirts',
+    brand: 'Adidas',
+    price: 120,
+    countInStock: 10,
+    description: 'A popular shirt',
+    rating: 3,
+    numReviews: 2,
+  },
+];
