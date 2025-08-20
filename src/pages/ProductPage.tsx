@@ -20,9 +20,7 @@ export default function ProductPage() {
   return isLoading ? (
     <LoadingBox />
   ) : error ? (
-    <MessageBox variant="danger">
-      {getError(error as  ApiError)}
-    </MessageBox>
+    <MessageBox variant="danger">{getError(error as ApiError)}</MessageBox>
   ) : (
     <div>
       <Row>
@@ -44,41 +42,42 @@ export default function ProductPage() {
               ></Rating>
             </ListGroup.Item>
             <ListGroup.Item>Price: ${product?.price}</ListGroup.Item>
-            <ListGroup.Item>
-              Description: {product?.description}
-            </ListGroup.Item>
+            <ListGroup.Item>Description: {product?.description}</ListGroup.Item>
           </ListGroup>
         </Col>
         <Col md={3}>
-        <Card>
-          <Card.Body>
-            <ListGroup variant='flush'>
-              <ListGroup.Item>
-                <Row>
-                  <Col>Price:</Col>
-                  <Col>${product?.price}</Col>
-                </Row>
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <Row>
-                  <Col>Status:</Col>
-                  <Col>{product.countInStock>0?(
-                    <Badge bg='success'> In Stock</Badge>
-                  ):(
-                    <Badge bg='danger'> Out of Stock</Badge>
-                  )}</Col>
-                </Row>
-              </ListGroup.Item>
-              {product?.countInStock>0 &&(
+          <Card>
+            <Card.Body>
+              <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <div className='d-grid'>
-                    <Button variant='primary'> Add To cart</Button>
-                  </div>
+                  <Row>
+                    <Col>Price:</Col>
+                    <Col>${product?.price}</Col>
+                  </Row>
                 </ListGroup.Item>
-              )}
-            </ListGroup>
-          </Card.Body>
-          </Card></Col>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Status:</Col>
+                    <Col>
+                      {product.countInStock > 0 ? (
+                        <Badge bg="success"> In Stock</Badge>
+                      ) : (
+                        <Badge bg="danger"> Out of Stock</Badge>
+                      )}
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+                {product?.countInStock > 0 && (
+                  <ListGroup.Item>
+                    <div className="d-grid">
+                      <Button variant="primary"> Add To cart</Button>
+                    </div>
+                  </ListGroup.Item>
+                )}
+              </ListGroup>
+            </Card.Body>
+          </Card>
+        </Col>
       </Row>
     </div>
   );
